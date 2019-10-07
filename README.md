@@ -16,3 +16,4 @@ we can push and pull any changes needed to git hub after this. Tested this metho
 10/3/19 | Caleb Proffitt | 1.5 hours | Helped to understand the translation of KnightCode to a grammar file. Researched the correct way to be able to push and pull from the
 team repository and discovered how branches can be incorporated into the project.
  
+10/7/19 | Ryan Meyer | 1.0 hours | Pulled new files from GitHub. Helped to update the grammar file for the STRING components which allowed it to compile upon further bug testing.
