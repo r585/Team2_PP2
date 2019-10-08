@@ -16,4 +16,8 @@ we can push and pull any changes needed to git hub after this. Tested this metho
 10/3/19 | Caleb Proffitt | 1.5 hours | Helped to understand the translation of KnightCode to a grammar file. Researched the correct way to be able to push and pull from the
 team repository and discovered how branches can be incorporated into the project.
  
+10/6/19 | Caleb Proffitt | 1.5 hours | Wrote initial drafts of the grammar file. Tested creating new branches in the project and using pull requests to merge the new branch into the master branch.
+
 10/7/19 | Ryan Meyer | 1.0 hours | Pulled new files from GitHub. Helped to update the grammar file for the STRING components which allowed it to compile upon further bug testing.
+
+10/7/19 | Caleb Proffitt | 1.0 hours | Pulled project onto the server for testing. Helped finalize the grammar file so that it can be compiled by antlr on the server.
