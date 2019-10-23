@@ -1,0 +1,16 @@
+PROGRAM Program5 
+ 
+DECLARE  
+	INTEGER x
+	INTEGER y
+ 
+BEGIN 
+
+	PRINT "Enter a number: " 
+	READ x 
+	PRINT "Enter another number: " 
+	READ y
+	IF x>y THEN PRINT x PRINT " is the largest number."
+	ELSE PRINT y PRINT " is the largest number."
+	ENDIF
+END 

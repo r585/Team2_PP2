@@ -1,0 +1,13 @@
+PROGRAM Program7
+ 
+DECLARE  
+	LETTER x
+ 
+BEGIN 
+
+	WHILE x > 0 DO 
+		PRINT x 
+		SET x := x - 1 
+	ENDWHILE 
+ 
+END 

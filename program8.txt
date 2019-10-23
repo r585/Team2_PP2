@@ -1,0 +1,15 @@
+PROGRAM Program8
+ 
+DECLARE  
+	STRING name1; 
+	STRING name2; 
+ 
+BEGIN 
+	PRINT "Enter your name: " 
+	READ name 
+	PRINT "Enter your friend's name:" 
+	READ name2
+	IF name1=name2 THEN PRINT "Your name and your friend's name are equal."
+	ELSE PRINT "Your name and your friend's name are not equal." 
+	ENDIF 
+END 
