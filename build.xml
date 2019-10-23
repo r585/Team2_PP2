@@ -16,6 +16,8 @@
 		<echo>${color: blue, bold}'ant build-grammar': Receives the .g4 file  and builds .java files to parse the grammar${color:reset}</echo>
 		<echo>${color: purple, bold}'ant compile-grammar': Compiles .java files${color:reset}</echo>
 		<echo>${color: red, bold}'ant clean-grammar': Cleans and deletes all files/build files in the directory${color:reset}</echo>
+		<echo>${color: yellow, bold}'clean': Cleans and removes all .class files in the directory${color:reset}</echo>
+		<echo>${color: blue, bold}'grun': Runs a test of the files against the compiler${color:reset}</echo>
 
 	</target>
 	
@@ -45,13 +47,21 @@
 		<echo>Cleaning the project directories.....</echo>
 	<delete>
 		<fileset dir="." includes="**.*~"/>
-		<fileset dir="." includes="**/*.class"/>
 		<fileset dir="." includes="**/knightcode*.java"/>
 		<fileset dir="." includes="**/*.interp"/>
 		<fileset dir="." includes="**/*.tokens"/>
 	</delete>
 
 	</target>
+
+	<target name="clean">
+		<echo>Cleaning the project directories for .class files.....</echo>
+	<delete>
+		<fileset dir="." includes="**/*.class"/>
+	</delete>
+
+	</target>
+		
 
 	<target name="grun">
 		<echo>Running the test rig.....</echo>
@@ -61,7 +71,7 @@
 			<arg value="-tokens" />
 			<arg value="${program}" />  
 			<classpath>
-				<pathelement location="build.bin" />
+				<pathelement location="build/bin" />
 				<pathelement location="/usr/local/lib/antlr-4.7.2-complete.jar" />
 			</classpath>
 		</java>
