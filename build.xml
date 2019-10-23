@@ -37,20 +37,34 @@
 	</target>
 
 	<target name="compile-grammar">
-		<echo>Compiling the .java source files</echo>
+		<echo>Compiling the .java source files.....</echo>
 		<javac includeantruntime="false" classpath="/usr/local/lib/antlr-4.7.2-complete.jar" srcdir="./build/src" destdir="./build/bin" />
 	</target>
 
 	<target name="clean-grammar">
-		<echo>Cleaning the project directories</echo>
+		<echo>Cleaning the project directories.....</echo>
 	<delete>
 		<fileset dir="." includes="**.*~"/>
 		<fileset dir="." includes="**/*.class"/>
-		<fileset dir="." includes="**/*.java"/>
+		<fileset dir="." includes="**/knightcode*.java"/>
 		<fileset dir="." includes="**/*.interp"/>
 		<fileset dir="." includes="**/*.tokens"/>
 	</delete>
 
+	</target>
+
+	<target name="grun">
+		<echo>Running the test rig.....</echo>
+		<java classname = "org.antlr.v4.gui.TestRig">
+			<arg value="knightcode" />
+			<arg value="program" />
+			<arg value="-tokens" />
+			<arg value="${program}" />  
+			<classpath>
+				<pathelement location="build.bin" />
+				<pathelement location="/usr/local/lib/antlr-4.7.2-complete.jar" />
+			</classpath>
+		</java>
 	</target>
 
 
