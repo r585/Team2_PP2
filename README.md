@@ -28,3 +28,4 @@ team repository and discovered how branches can be incorporated into the project
 
 10/17/19 | Caleb Proffitt | 30 minutes | Helped plan next steps for project. Going to meet up to work on the ANT file.
 
+10/22/19 | Ryan Meyer | 30 minutes | Created the usage and build sections of the ANT script.
