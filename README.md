@@ -34,3 +34,8 @@ team repository and discovered how branches can be incorporated into the project
 class files.
 
 10/24/19 | Ryan Meyer | 2 hours | Worked on editing and creating the ErrorListener.java and MyListener.java to handle different error handling for compilation. 
+
+10/24/19 | Caleb Proffitt | 2 hours | Assisted with adding arguements into ANT file. Began work on the compiler java files.
+
+10/24/19 | Elena Milan Lopez | 2 hours | Helped setup and construct the ErrorListener.java files and researched correct file structure for project. Beginning setup of
+MyListener.java file.
