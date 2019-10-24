@@ -16,8 +16,8 @@
 		<echo>${color: blue, bold}'ant build-grammar': Receives the .g4 file  and builds .java files to parse the grammar${color:reset}</echo>
 		<echo>${color: purple, bold}'ant compile-grammar': Compiles .java files${color:reset}</echo>
 		<echo>${color: red, bold}'ant clean-grammar': Cleans and deletes all files/build files in the directory${color:reset}</echo>
-		<echo>${color: yellow, bold}'clean': Cleans and removes all .class files in the directory${color:reset}</echo>
-		<echo>${color: blue, bold}'grun': Runs a test of the files against the compiler${color:reset}</echo>
+		<echo>${color: yellow, bold}'ant clean': Cleans and removes all .class files in the directory${color:reset}</echo>
+		<echo>${color: blue, bold}'ant grun': Runs a test of the files against the compiler${color:reset}</echo>
 
 	</target>
 	
