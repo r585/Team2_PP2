@@ -32,3 +32,5 @@ team repository and discovered how branches can be incorporated into the project
 
 10/23/19 | Ryan Meyer | 1.2 hours | Finished the ANT file by adding the compile-grammar, grun, and clean sections. Helped to create directories for src and bin for grammar and 
 class files.
+
+10/24/19 | Ryan Meyer | 2 hours | Worked on editing and creating the ErrorListener.java and MyListener.java to handle different error handling for compilation. 
