@@ -60,7 +60,18 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
  
-        @Override public void enterVariable(KnightCodeParser.VariableContext ctx) { }
+        @Override public void enterVariable(KnightCodeParser.VariableContext ctx) {
+
+		String type = ctx.type().getText();
+		variableMap(type, ctx.id().getText());
+		 if(!variableMap.containsKey(type)) {
+ 			variableMap.put(type,variableMap.size());
+		 }
+		 else {
+			 if(variableMap.containsKey(type)) {
+				 variableMap.put(type,-1);
+			 }
+		 }
 
         /**
          * {@inheritDoc}
@@ -177,10 +188,21 @@ public class MyListener extends KnightCodeBaseListener {
 	/**
          * {@inheritDoc}
          *
-         * <p>The default implementation does nothing.</p>
+         * <p>exitPrint is giving you ctx which holds String  or Id if there is a String with print we just print it. 
+	 *    Otherwise if there is an id  we will fetch value from HashMap and print.</p>
          */
 
-        @Override public void exitPrint(KnightCodeParser.PrintContext ctx) { }
+        @Override public void exitPrint(KnightCodeParser.PrintContext ctx) { 
+
+		if(ctx.STRING() != null){
+      			System.out.println(ctx.STRING().getText());
+   		}
+
+		else if(ctx.ID() != null){
+     			 System.out.println(this.variableMap.get(ctx.ID().getText()));
+   		}
+
+	}//exitPrint
 
         /**
          * {@inheritDoc}
