@@ -1,4 +1,4 @@
-// Generated from knightcode.g4 by ANTLR 4.7.2
+// Generated from KnightCode.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class knightcodeParser extends Parser {
+public class KnightCodeParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -19,7 +19,7 @@ public class knightcodeParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, ID=17, 
 		STRING=18, ASSIGN=19, LETTER=20, NUMBER=21, MUL=22, DIV=23, ADD=24, SUB=25, 
-		GT=26, LT=27, EQ=28, NEQ=29;
+		GT=26, LT=27, EQ=28, NEQ=29, WS=30, SL_COMMENT=31;
 	public static final int
 		RULE_file = 0, RULE_declare = 1, RULE_variable = 2, RULE_type = 3, RULE_body = 4, 
 		RULE_stat = 5, RULE_setvar = 6, RULE_expr = 7, RULE_comp = 8, RULE_print = 9, 
@@ -45,7 +45,7 @@ public class knightcodeParser extends Parser {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, "ID", "STRING", "ASSIGN", "LETTER", "NUMBER", 
-			"MUL", "DIV", "ADD", "SUB", "GT", "LT", "EQ", "NEQ"
+			"MUL", "DIV", "ADD", "SUB", "GT", "LT", "EQ", "NEQ", "WS", "SL_COMMENT"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -83,7 +83,7 @@ public class knightcodeParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "knightcode.g4"; }
+	public String getGrammarFileName() { return "KnightCode.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -94,13 +94,13 @@ public class knightcodeParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public knightcodeParser(TokenStream input) {
+	public KnightCodeParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	public static class FileContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(knightcodeParser.ID, 0); }
+		public TerminalNode ID() { return getToken(KnightCodeParser.ID, 0); }
 		public DeclareContext declare() {
 			return getRuleContext(DeclareContext.class,0);
 		}
@@ -113,11 +113,11 @@ public class knightcodeParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_file; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterFile(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterFile(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitFile(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitFile(this);
 		}
 	}
 
@@ -161,11 +161,11 @@ public class knightcodeParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_declare; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterDeclare(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterDeclare(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitDeclare(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitDeclare(this);
 		}
 	}
 
@@ -209,18 +209,18 @@ public class knightcodeParser extends Parser {
 		public TypeContext type() {
 			return getRuleContext(TypeContext.class,0);
 		}
-		public TerminalNode ID() { return getToken(knightcodeParser.ID, 0); }
+		public TerminalNode ID() { return getToken(KnightCodeParser.ID, 0); }
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_variable; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterVariable(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterVariable(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitVariable(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitVariable(this);
 		}
 	}
 
@@ -254,11 +254,11 @@ public class knightcodeParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterType(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitType(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitType(this);
 		}
 	}
 
@@ -305,11 +305,11 @@ public class knightcodeParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_body; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterBody(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterBody(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitBody(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitBody(this);
 		}
 	}
 
@@ -376,11 +376,11 @@ public class knightcodeParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_stat; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterStat(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterStat(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitStat(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitStat(this);
 		}
 	}
 
@@ -456,19 +456,19 @@ public class knightcodeParser extends Parser {
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode ASSIGN() { return getToken(knightcodeParser.ASSIGN, 0); }
-		public TerminalNode STRING() { return getToken(knightcodeParser.STRING, 0); }
+		public TerminalNode ASSIGN() { return getToken(KnightCodeParser.ASSIGN, 0); }
+		public TerminalNode STRING() { return getToken(KnightCodeParser.STRING, 0); }
 		public SetvarContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_setvar; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterSetvar(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterSetvar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitSetvar(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitSetvar(this);
 		}
 	}
 
@@ -517,32 +517,96 @@ public class knightcodeParser extends Parser {
 	}
 
 	public static class ExprContext extends ParserRuleContext {
-		public TerminalNode NUMBER() { return getToken(knightcodeParser.NUMBER, 0); }
-		public TerminalNode ID() { return getToken(knightcodeParser.ID, 0); }
+		public ExprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_expr; }
+	 
+		public ExprContext() { }
+		public void copyFrom(ExprContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NumberContext extends ExprContext {
+		public TerminalNode NUMBER() { return getToken(KnightCodeParser.NUMBER, 0); }
+		public NumberContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterNumber(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitNumber(this);
+		}
+	}
+	public static class MulDivContext extends ExprContext {
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
 		}
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode MUL() { return getToken(knightcodeParser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(knightcodeParser.DIV, 0); }
-		public TerminalNode ADD() { return getToken(knightcodeParser.ADD, 0); }
-		public TerminalNode SUB() { return getToken(knightcodeParser.SUB, 0); }
-		public CompContext comp() {
-			return getRuleContext(CompContext.class,0);
-		}
-		public ExprContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expr; }
+		public TerminalNode MUL() { return getToken(KnightCodeParser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(KnightCodeParser.DIV, 0); }
+		public MulDivContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterExpr(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterMulDiv(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitExpr(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitMulDiv(this);
+		}
+	}
+	public static class AddSubContext extends ExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode ADD() { return getToken(KnightCodeParser.ADD, 0); }
+		public TerminalNode SUB() { return getToken(KnightCodeParser.SUB, 0); }
+		public AddSubContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterAddSub(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitAddSub(this);
+		}
+	}
+	public static class CompareContext extends ExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public CompContext comp() {
+			return getRuleContext(CompContext.class,0);
+		}
+		public CompareContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterCompare(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitCompare(this);
+		}
+	}
+	public static class IdContext extends ExprContext {
+		public TerminalNode ID() { return getToken(KnightCodeParser.ID, 0); }
+		public IdContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterId(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitId(this);
 		}
 	}
 
@@ -567,12 +631,19 @@ public class knightcodeParser extends Parser {
 			switch (_input.LA(1)) {
 			case NUMBER:
 				{
+				_localctx = new NumberContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
 				setState(66);
 				match(NUMBER);
 				}
 				break;
 			case ID:
 				{
+				_localctx = new IdContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(67);
 				match(ID);
 				}
@@ -594,7 +665,7 @@ public class knightcodeParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 					case 1:
 						{
-						_localctx = new ExprContext(_parentctx, _parentState);
+						_localctx = new MulDivContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(70);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
@@ -614,7 +685,7 @@ public class knightcodeParser extends Parser {
 						break;
 					case 2:
 						{
-						_localctx = new ExprContext(_parentctx, _parentState);
+						_localctx = new AddSubContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(73);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
@@ -634,7 +705,7 @@ public class knightcodeParser extends Parser {
 						break;
 					case 3:
 						{
-						_localctx = new ExprContext(_parentctx, _parentState);
+						_localctx = new CompareContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(76);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
@@ -665,21 +736,21 @@ public class knightcodeParser extends Parser {
 	}
 
 	public static class CompContext extends ParserRuleContext {
-		public TerminalNode GT() { return getToken(knightcodeParser.GT, 0); }
-		public TerminalNode LT() { return getToken(knightcodeParser.LT, 0); }
-		public TerminalNode EQ() { return getToken(knightcodeParser.EQ, 0); }
-		public TerminalNode NEQ() { return getToken(knightcodeParser.NEQ, 0); }
+		public TerminalNode GT() { return getToken(KnightCodeParser.GT, 0); }
+		public TerminalNode LT() { return getToken(KnightCodeParser.LT, 0); }
+		public TerminalNode EQ() { return getToken(KnightCodeParser.EQ, 0); }
+		public TerminalNode NEQ() { return getToken(KnightCodeParser.NEQ, 0); }
 		public CompContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comp; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterComp(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterComp(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitComp(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitComp(this);
 		}
 	}
 
@@ -714,19 +785,19 @@ public class knightcodeParser extends Parser {
 	}
 
 	public static class PrintContext extends ParserRuleContext {
-		public TerminalNode STRING() { return getToken(knightcodeParser.STRING, 0); }
-		public TerminalNode ID() { return getToken(knightcodeParser.ID, 0); }
+		public TerminalNode STRING() { return getToken(KnightCodeParser.STRING, 0); }
+		public TerminalNode ID() { return getToken(KnightCodeParser.ID, 0); }
 		public PrintContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_print; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterPrint(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterPrint(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitPrint(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitPrint(this);
 		}
 	}
 
@@ -763,18 +834,18 @@ public class knightcodeParser extends Parser {
 	}
 
 	public static class ReadContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(knightcodeParser.ID, 0); }
+		public TerminalNode ID() { return getToken(KnightCodeParser.ID, 0); }
 		public ReadContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_read; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterRead(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterRead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitRead(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitRead(this);
 		}
 	}
 
@@ -802,11 +873,14 @@ public class knightcodeParser extends Parser {
 	}
 
 	public static class DecisionContext extends ParserRuleContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
 		public CompContext comp() {
 			return getRuleContext(CompContext.class,0);
-		}
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
 		}
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
@@ -820,11 +894,11 @@ public class knightcodeParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_decision; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterDecision(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterDecision(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitDecision(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitDecision(this);
 		}
 	}
 
@@ -838,54 +912,46 @@ public class knightcodeParser extends Parser {
 			setState(93);
 			match(T__9);
 			setState(94);
-			comp();
-			setState(95);
 			expr(0);
+			setState(95);
+			comp();
 			setState(96);
+			expr(0);
+			setState(97);
 			match(T__10);
-			setState(98); 
+			setState(99); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(97);
+				setState(98);
 				stat();
 				}
 				}
-				setState(100); 
+				setState(101); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__13) | (1L << ID) | (1L << NUMBER))) != 0) );
-			setState(110);
+			{
+			setState(103);
+			match(T__11);
+			setState(105); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__11) {
+			do {
 				{
 				{
-				setState(102);
-				match(T__11);
-				setState(104); 
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				do {
-					{
-					{
-					setState(103);
-					stat();
-					}
-					}
-					setState(106); 
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__13) | (1L << ID) | (1L << NUMBER))) != 0) );
+				setState(104);
+				stat();
 				}
 				}
-				setState(112);
+				setState(107); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__13) | (1L << ID) | (1L << NUMBER))) != 0) );
 			}
-			setState(113);
+			setState(109);
 			match(T__12);
 			}
 		}
@@ -901,11 +967,14 @@ public class knightcodeParser extends Parser {
 	}
 
 	public static class LoopContext extends ParserRuleContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
 		public CompContext comp() {
 			return getRuleContext(CompContext.class,0);
-		}
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
 		}
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
@@ -919,11 +988,11 @@ public class knightcodeParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_loop; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).enterLoop(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).enterLoop(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof knightcodeListener ) ((knightcodeListener)listener).exitLoop(this);
+			if ( listener instanceof KnightCodeListener ) ((KnightCodeListener)listener).exitLoop(this);
 		}
 	}
 
@@ -934,29 +1003,31 @@ public class knightcodeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(115);
+			setState(111);
 			match(T__13);
-			setState(116);
-			comp();
-			setState(117);
+			setState(112);
 			expr(0);
-			setState(118);
+			setState(113);
+			comp();
+			setState(114);
+			expr(0);
+			setState(115);
 			match(T__14);
-			setState(120); 
+			setState(117); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(119);
+				setState(116);
 				stat();
 				}
 				}
-				setState(122); 
+				setState(119); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__13) | (1L << ID) | (1L << NUMBER))) != 0) );
-			setState(124);
+			setState(121);
 			match(T__15);
 			}
 		}
@@ -991,37 +1062,37 @@ public class knightcodeParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\37\u0081\4\2\t\2"+
-		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
-		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\3\2\3\2\3\2\3\2\3\2\3\3\3\3\6\3$\n\3\r"+
-		"\3\16\3%\3\4\3\4\3\4\3\5\3\5\3\6\3\6\6\6/\n\6\r\6\16\6\60\3\6\3\6\3\7"+
-		"\3\7\3\7\3\7\3\7\3\7\5\7;\n\7\3\b\3\b\3\b\3\b\3\b\5\bB\n\b\3\t\3\t\3\t"+
-		"\5\tG\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\tS\n\t\f\t\16\tV\13"+
-		"\t\3\n\3\n\3\13\3\13\3\13\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\6\re\n\r\r\r"+
-		"\16\rf\3\r\3\r\6\rk\n\r\r\r\16\rl\7\ro\n\r\f\r\16\rr\13\r\3\r\3\r\3\16"+
-		"\3\16\3\16\3\16\3\16\6\16{\n\16\r\16\16\16|\3\16\3\16\3\16\2\3\20\17\2"+
-		"\4\6\b\n\f\16\20\22\24\26\30\32\2\7\3\2\5\6\3\2\30\31\3\2\32\33\3\2\34"+
-		"\37\3\2\23\24\2\u0083\2\34\3\2\2\2\4!\3\2\2\2\6\'\3\2\2\2\b*\3\2\2\2\n"+
-		",\3\2\2\2\f:\3\2\2\2\16<\3\2\2\2\20F\3\2\2\2\22W\3\2\2\2\24Y\3\2\2\2\26"+
-		"\\\3\2\2\2\30_\3\2\2\2\32u\3\2\2\2\34\35\7\3\2\2\35\36\7\23\2\2\36\37"+
-		"\5\4\3\2\37 \5\n\6\2 \3\3\2\2\2!#\7\4\2\2\"$\5\6\4\2#\"\3\2\2\2$%\3\2"+
-		"\2\2%#\3\2\2\2%&\3\2\2\2&\5\3\2\2\2\'(\5\b\5\2()\7\23\2\2)\7\3\2\2\2*"+
-		"+\t\2\2\2+\t\3\2\2\2,.\7\7\2\2-/\5\f\7\2.-\3\2\2\2/\60\3\2\2\2\60.\3\2"+
-		"\2\2\60\61\3\2\2\2\61\62\3\2\2\2\62\63\7\b\2\2\63\13\3\2\2\2\64;\5\16"+
-		"\b\2\65;\5\20\t\2\66;\5\24\13\2\67;\5\26\f\28;\5\30\r\29;\5\32\16\2:\64"+
-		"\3\2\2\2:\65\3\2\2\2:\66\3\2\2\2:\67\3\2\2\2:8\3\2\2\2:9\3\2\2\2;\r\3"+
-		"\2\2\2<=\7\t\2\2=>\5\20\t\2>A\7\25\2\2?B\5\20\t\2@B\7\24\2\2A?\3\2\2\2"+
-		"A@\3\2\2\2B\17\3\2\2\2CD\b\t\1\2DG\7\27\2\2EG\7\23\2\2FC\3\2\2\2FE\3\2"+
-		"\2\2GT\3\2\2\2HI\f\7\2\2IJ\t\3\2\2JS\5\20\t\bKL\f\6\2\2LM\t\4\2\2MS\5"+
-		"\20\t\7NO\f\5\2\2OP\5\22\n\2PQ\5\20\t\6QS\3\2\2\2RH\3\2\2\2RK\3\2\2\2"+
-		"RN\3\2\2\2SV\3\2\2\2TR\3\2\2\2TU\3\2\2\2U\21\3\2\2\2VT\3\2\2\2WX\t\5\2"+
-		"\2X\23\3\2\2\2YZ\7\n\2\2Z[\t\6\2\2[\25\3\2\2\2\\]\7\13\2\2]^\7\23\2\2"+
-		"^\27\3\2\2\2_`\7\f\2\2`a\5\22\n\2ab\5\20\t\2bd\7\r\2\2ce\5\f\7\2dc\3\2"+
-		"\2\2ef\3\2\2\2fd\3\2\2\2fg\3\2\2\2gp\3\2\2\2hj\7\16\2\2ik\5\f\7\2ji\3"+
-		"\2\2\2kl\3\2\2\2lj\3\2\2\2lm\3\2\2\2mo\3\2\2\2nh\3\2\2\2or\3\2\2\2pn\3"+
-		"\2\2\2pq\3\2\2\2qs\3\2\2\2rp\3\2\2\2st\7\17\2\2t\31\3\2\2\2uv\7\20\2\2"+
-		"vw\5\22\n\2wx\5\20\t\2xz\7\21\2\2y{\5\f\7\2zy\3\2\2\2{|\3\2\2\2|z\3\2"+
-		"\2\2|}\3\2\2\2}~\3\2\2\2~\177\7\22\2\2\177\33\3\2\2\2\r%\60:AFRTflp|";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3!~\4\2\t\2\4\3\t\3"+
+		"\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f"+
+		"\t\f\4\r\t\r\4\16\t\16\3\2\3\2\3\2\3\2\3\2\3\3\3\3\6\3$\n\3\r\3\16\3%"+
+		"\3\4\3\4\3\4\3\5\3\5\3\6\3\6\6\6/\n\6\r\6\16\6\60\3\6\3\6\3\7\3\7\3\7"+
+		"\3\7\3\7\3\7\5\7;\n\7\3\b\3\b\3\b\3\b\3\b\5\bB\n\b\3\t\3\t\3\t\5\tG\n"+
+		"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\tS\n\t\f\t\16\tV\13\t\3\n"+
+		"\3\n\3\13\3\13\3\13\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\3\r\6\rf\n\r\r\r\16"+
+		"\rg\3\r\3\r\6\rl\n\r\r\r\16\rm\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\6"+
+		"\16x\n\16\r\16\16\16y\3\16\3\16\3\16\2\3\20\17\2\4\6\b\n\f\16\20\22\24"+
+		"\26\30\32\2\7\3\2\5\6\3\2\30\31\3\2\32\33\3\2\34\37\3\2\23\24\2\177\2"+
+		"\34\3\2\2\2\4!\3\2\2\2\6\'\3\2\2\2\b*\3\2\2\2\n,\3\2\2\2\f:\3\2\2\2\16"+
+		"<\3\2\2\2\20F\3\2\2\2\22W\3\2\2\2\24Y\3\2\2\2\26\\\3\2\2\2\30_\3\2\2\2"+
+		"\32q\3\2\2\2\34\35\7\3\2\2\35\36\7\23\2\2\36\37\5\4\3\2\37 \5\n\6\2 \3"+
+		"\3\2\2\2!#\7\4\2\2\"$\5\6\4\2#\"\3\2\2\2$%\3\2\2\2%#\3\2\2\2%&\3\2\2\2"+
+		"&\5\3\2\2\2\'(\5\b\5\2()\7\23\2\2)\7\3\2\2\2*+\t\2\2\2+\t\3\2\2\2,.\7"+
+		"\7\2\2-/\5\f\7\2.-\3\2\2\2/\60\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\62"+
+		"\3\2\2\2\62\63\7\b\2\2\63\13\3\2\2\2\64;\5\16\b\2\65;\5\20\t\2\66;\5\24"+
+		"\13\2\67;\5\26\f\28;\5\30\r\29;\5\32\16\2:\64\3\2\2\2:\65\3\2\2\2:\66"+
+		"\3\2\2\2:\67\3\2\2\2:8\3\2\2\2:9\3\2\2\2;\r\3\2\2\2<=\7\t\2\2=>\5\20\t"+
+		"\2>A\7\25\2\2?B\5\20\t\2@B\7\24\2\2A?\3\2\2\2A@\3\2\2\2B\17\3\2\2\2CD"+
+		"\b\t\1\2DG\7\27\2\2EG\7\23\2\2FC\3\2\2\2FE\3\2\2\2GT\3\2\2\2HI\f\7\2\2"+
+		"IJ\t\3\2\2JS\5\20\t\bKL\f\6\2\2LM\t\4\2\2MS\5\20\t\7NO\f\5\2\2OP\5\22"+
+		"\n\2PQ\5\20\t\6QS\3\2\2\2RH\3\2\2\2RK\3\2\2\2RN\3\2\2\2SV\3\2\2\2TR\3"+
+		"\2\2\2TU\3\2\2\2U\21\3\2\2\2VT\3\2\2\2WX\t\5\2\2X\23\3\2\2\2YZ\7\n\2\2"+
+		"Z[\t\6\2\2[\25\3\2\2\2\\]\7\13\2\2]^\7\23\2\2^\27\3\2\2\2_`\7\f\2\2`a"+
+		"\5\20\t\2ab\5\22\n\2bc\5\20\t\2ce\7\r\2\2df\5\f\7\2ed\3\2\2\2fg\3\2\2"+
+		"\2ge\3\2\2\2gh\3\2\2\2hi\3\2\2\2ik\7\16\2\2jl\5\f\7\2kj\3\2\2\2lm\3\2"+
+		"\2\2mk\3\2\2\2mn\3\2\2\2no\3\2\2\2op\7\17\2\2p\31\3\2\2\2qr\7\20\2\2r"+
+		"s\5\20\t\2st\5\22\n\2tu\5\20\t\2uw\7\21\2\2vx\5\f\7\2wv\3\2\2\2xy\3\2"+
+		"\2\2yw\3\2\2\2yz\3\2\2\2z{\3\2\2\2{|\7\22\2\2|\33\3\2\2\2\f%\60:AFRTg"+
+		"my";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
