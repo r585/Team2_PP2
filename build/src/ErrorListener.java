@@ -21,8 +21,8 @@ public class ErrorListener extends BaseErrorListener{
 		Collections.reverse(stack);
 		System.err.println("rule stack "+stack);
 		System.err.println("line "+line+":"+charPositionInLine+" at" + offendingSymbol + ": "+msg);
-		//System.err.println(msg);
-		//System.err.println("SON - YOU DONE MESSED UP!");
+		System.err.println(msg);
+		System.err.println("An error occurred during the compilation process. Please review your code.");
 		System.exit(1);
 	}
 

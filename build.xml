@@ -28,7 +28,7 @@
 		<java classname="org.antlr.v4.Tool">	
 			<arg value="-o" />
 			<arg value="build/src" />	
-			<arg value="knightcode.g4" />
+			<arg value="KnightCode.g4" />
 
 			<classpath>
 				<pathelement location="/usr/local/lib/antlr-4.7.2-complete.jar" />
@@ -41,13 +41,23 @@
 	<target name="compile-grammar">
 		<echo>Compiling the .java source files.....</echo>
 		<javac includeantruntime="false" classpath="/usr/local/lib/antlr-4.7.2-complete.jar" srcdir="./build/src" destdir="./build/bin" />
+	
+		<input message="Would you like java source code (source) or java bytecode (byte): " addproperty="arg1" defaultvalue="source" validargs="source, byte"/>
+        	<input message="What is the name of the input file?" addproperty="arg2" />
+		<input message="What would you like the name of the output file to be?" addproperty="arg3" />
+
+			<java classname="kcc">
+            			<arg value="${arg1}"/>
+				<arg value="${arg2}" />
+				<arg value="${arg3}" />
+        		</java>
 	</target>
 
 	<target name="clean-grammar">
 		<echo>Cleaning the project directories.....</echo>
 	<delete>
 		<fileset dir="." includes="**.*~"/>
-		<fileset dir="." includes="**/knightcode*.java"/>
+		<fileset dir="." includes="**/*KnightCode*.java"/>
 		<fileset dir="." includes="**/*.interp"/>
 		<fileset dir="." includes="**/*.tokens"/>
 	</delete>
