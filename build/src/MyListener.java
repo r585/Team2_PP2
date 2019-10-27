@@ -12,6 +12,7 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  * This class provides an empty implementation of {@link KnightCodeListener},
@@ -60,18 +61,7 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
  
-        @Override public void enterVariable(KnightCodeParser.VariableContext ctx) {
-
-		String type = ctx.type().getText();
-		variableMap(type, ctx.id().getText());
-		 if(!variableMap.containsKey(type)) {
- 			variableMap.put(type,variableMap.size());
-		 }
-		 else {
-			 if(variableMap.containsKey(type)) {
-				 variableMap.put(type,-1);
-			 }
-		 }
+        @Override public void enterVariable(KnightCodeParser.VariableContext ctx) { }
 
         /**
          * {@inheritDoc}
@@ -135,7 +125,20 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-        @Override public void enterSetvar(KnightCodeParser.SetvarContext ctx) { }
+        @Override public void enterSetvar(KnightCodeParser.SetvarContext ctx) {
+
+		String type = ctx.type().getText();
+                variableMap(type, ctx.ID().getText());
+                 if(!variableMap.containsKey(type)) {
+                        variableMap.put(type,variableMap.size());
+                 }
+                 else {
+                         if(variableMap.containsKey(type)) {
+                                 variableMap.put(type,-1);
+                         }
+                 }
+
+ }
 
         /**
          * {@inheritDoc}
@@ -210,7 +213,26 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-        @Override public void enterRead(KnightCodeParser.ReadContext ctx) { }
+        @Override public void enterRead(KnightCodeParser.ReadContext ctx) {
+		
+		String type  = ctx.type().getText();
+
+		Scanner reader = new Scanner(System.in);
+		type  = reader.nextLine();
+		variableMap(type, ctx.ID().getText());
+		if(!variableMap.containsKey(type)) {
+                        variableMap.put(type,variableMap.size());
+                 }
+                 else {
+                         if(variableMap.containsKey(type)) {
+                                 variableMap.put(type,-1);
+                         }
+                 }
+
+
+ this.variableMap.get(ctx.ID().getText());
+
+ }
 
         /**
          * {@inheritDoc}
@@ -258,7 +280,10 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-	@Override public void enterEveryRule(ParserRuleContext ctx) { }
+	@Override public void enterEveryRule(ParserRuleContext ctx) {
+
+		System.out.println("Rule Used: " + ctx.getText());
+ }
 
 	/**
          * {@inheritDoc}
