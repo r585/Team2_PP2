@@ -78,20 +78,4 @@
 
         </target>
 
-
-        <target name="grun">
-		<echo>Running the test rig.....</echo>
-                <java classname = "org.antlr.v4.gui.TestRig">
-                        <arg value="knightcode" />
-                        <arg value="program" />
-                        <arg value="-tokens" />
-                        <arg value="${program}" />
-                        <classpath>
-                                <pathelement location="build/bin" />
-                                <pathelement location="/usr/local/lib/antlr-4.7.2-complete.jar" />
-                        </classpath>
-                </java>
-        </target>
-
-
 </project>
