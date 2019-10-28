@@ -9,16 +9,16 @@ Team Members:
 - Elena Milan Lopez
 
 Ant Usage:
-     'ant usage': Lists options of available commands for ANT script 
-     'ant build-grammar': Receives the .g4 file  and builds .java files to parse the grammar
-     'ant compile-grammar': Compiles .java files
-     'ant clean-grammar': Cleans and deletes all files/build files in the directory
-     'ant clean': Cleans and removes all .class files in the directory
+     *'ant usage': Lists options of available commands for ANT script 
+     *'ant build-grammar': Receives the .g4 file  and builds .java files to parse the grammar
+     *'ant compile-grammar': Compiles .java files
+     *'ant clean-grammar': Cleans and deletes all files/build files in the directory
+     *'ant clean': Cleans and removes all .class files in the directory
      
 Running the Compiler:
 To run the compiler, simply enter these commands into the console:
-     ant build-grammar
-     ant compile-grammar
+     *ant build-grammar
+     *ant compile-grammar
 Once the compile command is executed, it will ask if you would rather have java sourcecode or bytecode, then the name of the program you wish to run, and finally what you would like to name the created java .class file.
 
 Project Log:
