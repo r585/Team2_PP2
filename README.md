@@ -19,7 +19,7 @@ Running the Compiler:
 To run the compiler, simply enter these commands into the console:
      ant build-grammar
      ant compile-grammar
-Once the compile command is executed, it will ask if you would rather have java sourcecode or bytecode, then the name of the program you wish to run, and finally what you would like to name the created java .class file. 
+Once the compile command is executed, it will ask if you would rather have java sourcecode or bytecode (i.e. source), then the name of the program you wish to run (i.e. program1.kc), and finally what you would like to name the created java .class file (i.e. newProgram). 
 
 Project Log:
 
