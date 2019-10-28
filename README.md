@@ -1,7 +1,7 @@
 ## Team2_PP2
 
 Project Summary:
-This project uses ANTLR to translate KnightCode programs into Java. A .g4 grammar file was created to allow ANTLR to build the .lexer, .tokens, and .java files that would be used later in the compilation. An error listener was created and extended to catch any potential errors with the grammar and to ensure that any errors that did occur were reported. A compiler class was created to generate .class files for the lexer and parser. All these pieces were tied together by an ANT script that allows for quick step-by-step building and execution of the compiler.
+This project uses ANTLR to translate KnightCode programs into Java. A .g4 grammar file was created to allow ANTLR to build the .lexer, .tokens, and .java files that would be used later in the compilation. An error listener was created and extended to catch any potential errors with the grammar and to ensure that any errors that did occur were reported. A compiler class, kcc.class, was created to generate .class files for the lexer and parser. All these pieces were tied together by an ANT script that allows for quick step-by-step building and execution of the compiler.
 
 Team Members:
 - Ryan Meyer
@@ -19,7 +19,7 @@ Running the Compiler:
 To run the compiler, simply enter these commands into the console:
      ant build-grammar
      ant compile-grammar
-Once the compile command is executed, it will ask if you would rather have java sourcecode or bytecode, then the name of the program you wish to run, and finally what you would like to name the created java .class file.
+Once the compile command is executed, it will ask if you would rather have java sourcecode or bytecode, then the name of the program you wish to run, and finally what you would like to name the created java .class file. 
 
 Project Log:
 
@@ -53,5 +53,15 @@ class files.
 
 10/24/19 | Caleb Proffitt | 2 hours | Assisted with adding arguements into ANT file. Began work on the compiler java files.
 
-10/24/19 | Elena Milan Lopez | 2 hours | Helped setup and construct the ErrorListener.java files and researched correct file structure for project. Beginning setup of
-MyListener.java file.
+10/24/19 | Elena Milan Lopez | 2 hours | Helped setup and construct the ErrorListener.java files and researched correct file structure for project. Beginning setup of MyListener.java file.
+
+10/27/19 | Elena Milan Lopez | 11.5 hours | Finished creating the MyListener file. Thoroughly commented all files. Helped during the testing of the compiler. Helped research different ways of writing the methods. Assisted with the errors encountered during final compilation.
+
+10/27/19 | Ryan Meyer | 11.5 hours | Finished creating the MyListener file. Thoroughly commented all files. Ran testing through all KnightCode files to ensure they compile. Assisted with errors encountered during final compilation. 
+
+10/27/19 | Caleb Proffitt | 11.5 hours | Finished the build file. Created the compiler class. Assisted with the errors encountered during final compilation. Finalized the README file.
+
+Problems Encountered During Final Compilation:
+All programs compiled, but with these runtime errors.
+Program1.kc - Encountered a NullPointerException pointing to the ExitSetVar method in the MyListener class
+Program2.kc -> Program8.kc - Encountered a NumberFormatException error after compilation. It occurs when converting the strings into ints in the MyListener class.
