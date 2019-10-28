@@ -1,0 +1,11 @@
+/* This file is used as a place holder for the bin directory.
+* @author Ryan Meyer
+* @author Elena Milan Lopez
+* @author Caleb Proffitt
+* @version 1.0
+* Programming Project Two
+* CS322 - Compiler Construction
+* Fall 2019
+**/
+
+*This file is here to ensure GitHub does not delete the bin directory within build/bin. When all class files are removed. The bin directory is empty.*
