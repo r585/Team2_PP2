@@ -1,4 +1,4 @@
-<<?xml version = "1.0"?>
+<?xml version = "1.0"?>
 <project name="CS322 Programming Project Two" default="usage" basedir=".">
 
 <componentdef classname="org.dogsplayingpoker.ant.PropertyHelpers.ColorPropertyEvaluator"
@@ -51,7 +51,13 @@
                         <arg value="${args2}"/>
 
                         <arg line="java kcc ${args0} ${args1} ${args2}"/>
+			 <classpath>
+                                <pathelement location="build/bin" />
+				<pathelement location="/usr/local/lib/antlr-4.7.2-complete.jar" />
+                        </classpath>
+
                 </java>
+	</target>
 
         <target name="clean-grammar">
                 <echo>Cleaning the project directories.....</echo>

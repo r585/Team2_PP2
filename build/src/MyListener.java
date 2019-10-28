@@ -61,7 +61,19 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
  
-        @Override public void enterVariable(KnightCodeParser.VariableContext ctx) { }
+        @Override public void enterVariable(KnightCodeParser.VariableContext ctx) {
+
+		String type = ctx.type().getText();
+                 if(!variableMap.containsKey(type)) {
+                        variableMap.put(type,variableMap.size());
+                 }
+                 else {
+                         if(variableMap.containsKey(type)) {
+                                 variableMap.put(type,-1);
+                         }
+                 }
+
+ }
 
         /**
          * {@inheritDoc}
@@ -126,9 +138,10 @@ public class MyListener extends KnightCodeBaseListener {
          */
 
         @Override public void enterSetvar(KnightCodeParser.SetvarContext ctx) {
-
-		String type = ctx.type().getText();
-                variableMap(type, ctx.ID().getText());
+		
+		 String type = ctx.STRING().getText();
+		 String num = ctx.expr(0).getText();
+		 int var = Integer.parseInt(num);
                  if(!variableMap.containsKey(type)) {
                         variableMap.put(type,variableMap.size());
                  }
@@ -137,6 +150,15 @@ public class MyListener extends KnightCodeBaseListener {
                                  variableMap.put(type,-1);
                          }
                  }
+		if(!variableMap.containsKey(num)) {
+                        variableMap.put(num,var);
+                 }
+                 else {
+                         if(variableMap.containsKey(type)) {
+                                 variableMap.put(type,-1);
+                         }
+                 }
+
 
  }
 
@@ -154,7 +176,7 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-        @Override public void enterExpr(KnightCodeParser.ExprContext ctx) { }
+       // @Override public void enterExpr(KnightCodeParser.ExprContext ctx) { }
 
         /**
          * {@inheritDoc}
@@ -162,13 +184,13 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-        @Override public void exitExpr(KnightCodeParser.ExprContext ctx) { }
+       // @Override public void exitExpr(KnightCodeParser.ExprContext ctx) { }
 
 	/**
          * {@inheritDoc}
          *
          * <p>The default implementation does nothing.</p>
-         */
+       	 */
 
         @Override public void enterComp(KnightCodeParser.CompContext ctx) { }
 
@@ -215,11 +237,10 @@ public class MyListener extends KnightCodeBaseListener {
 
         @Override public void enterRead(KnightCodeParser.ReadContext ctx) {
 		
-		String type  = ctx.type().getText();
+		String type  = ctx.ID().getText();
 
 		Scanner reader = new Scanner(System.in);
 		type  = reader.nextLine();
-		variableMap(type, ctx.ID().getText());
 		if(!variableMap.containsKey(type)) {
                         variableMap.put(type,variableMap.size());
                  }
@@ -228,9 +249,6 @@ public class MyListener extends KnightCodeBaseListener {
                                  variableMap.put(type,-1);
                          }
                  }
-
-
- this.variableMap.get(ctx.ID().getText());
 
  }
 
@@ -248,7 +266,14 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-        @Override public void enterDecision(KnightCodeParser.DecisionContext ctx) { }
+        @Override public void enterDecision(KnightCodeParser.DecisionContext ctx) {
+
+		//String cond = ctx.comp().getText();
+		//if(cond == true)
+			//cond.stat();
+		 
+
+ }
 
         /**
          * {@inheritDoc}

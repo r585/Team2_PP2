@@ -19,7 +19,7 @@ public class kcc {
 
 
                 String inputFile = null;
-                if (args[1].length>0)
+                if (args[1].length()>0)
                         inputFile = args[1];    //Create a new empty string. If arguments have been input in the command line, take args[1] and set that as the name of the inputFile
 
                 InputStream is = System.in;
@@ -29,21 +29,21 @@ public class kcc {
 
                 ANTLRInputStream input = new ANTLRInputStream(is);
                 KnightCodeLexer lexer = new KnightCodeLexer(input);
-                CommonTokensStream tokens = new CommonTokensStream(lexer);
-                KnightCodeParser parser = new KnightCodeLexer(tokens);
+                CommonTokenStream tokens = new CommonTokenStream(lexer);
+                KnightCodeParser parser = new KnightCodeParser(tokens);
 
                 parser.removeErrorListeners();
                 parser.addErrorListener(new ErrorListener());   //Use the error listener we created instead of any defaults
 
-                ParseTree tree = parser.program();
+                ParseTree tree = parser.file();
                 ParseTreeWalker walkerTexasRanger = new ParseTreeWalker();      //Create a new parse tree and a walker to walk the tree
 
                 MyListener l = new MyListener();
                 walkerTexasRanger.walk(l, tree);        //Use the listener we created to walk the parse tree
 
-                if (args[0]="source") {
-                        Runtime rt Runtime.getRuntime();
-                        Process pr = rt.exec("java kcc " + args[3]);    //If the user wants source code, run java kcc source fileName outputName
+                if (args[0].equals("source")) {
+                        Runtime rt = Runtime.getRuntime();
+                        Process pr = rt.exec(args[3]);    //If the user wants source code, run java kcc source fileName outputName
                 } else {
                         System.out.println("Coming Soon");      //If the user wants byte code, politely refuse
                 }
