@@ -8,7 +8,7 @@ BEGIN
 	PRINT "Enter a number: " 
 	READ x 
 	
-	IF x>=0 THEN PRINT x PRINT " is a positive number."
+	IF x>0 THEN PRINT x PRINT " is a positive number."
 	ELSE PRINT x PRINT " is a negative number."
 	ENDIF
 END 
