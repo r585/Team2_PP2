@@ -13,11 +13,9 @@
                 <echo>${color: green, bold}Review each option below and type the correct command for the desired result:${color:reset} </echo>
                 <echo>${color: yellow, bold}'ant usage': Lists options of available commands for ANT script${color:reset} </echo>
                 <echo>${color: blue, bold}'ant build-grammar': Receives the .g4 file  and builds .java files to parse the grammar${color:reset}</echo>
-                <echo>${color: purple, bold}'ant compile-args': Asks for the arguments to be used at compile${color:reset}</echo>
                 <echo>${color: red, bold}'ant compile-grammar': Compiles .java files${color:reset}</echo>
                 <echo>${color: yellow, bold}'ant clean-grammar': Cleans and deletes all files/build files in the directory${color:reset}</echo>
                 <echo>${color: blue, bold}'ant clean': Cleans and removes all .class files in the directory${color:reset}</echo>
-                <echo>${color: purple, bold}'ant grun': Runs a test of the files against the compiler${color:reset}</echo>
 
         </target>
 
