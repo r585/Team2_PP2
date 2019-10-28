@@ -1,9 +1,25 @@
 ## Team2_PP2
 
+Project Summary:
+This project uses ANTLR to translate KnightCode programs into Java. A .g4 grammar file was created to allow ANTLR to build the .lexer, .tokens, and .java files that would be used later in the compilation. An error listener was created and extended to catch any potential errors with the grammar and to ensure that any errors that did occur were reported. A compiler class was created to generate .class files for the lexer and parser. All these pieces were tied together by an ANT script that allows for quick step-by-step building and execution of the compiler.
+
 Team Members:
 - Ryan Meyer
 - Caleb Proffitt
 - Elena Milan Lopez
+
+Ant Usage:
+     'ant usage': Lists options of available commands for ANT script 
+     'ant build-grammar': Receives the .g4 file  and builds .java files to parse the grammar
+     'ant compile-grammar': Compiles .java files
+     'ant clean-grammar': Cleans and deletes all files/build files in the directory
+     'ant clean': Cleans and removes all .class files in the directory
+     
+Running the Compiler:
+To run the compiler, simply enter these commands into the console:
+     ant build-grammar
+     ant compile-grammar
+Once the compile command is executed, it will ask if you would rather have java sourcecode or bytecode, then the name of the program you wish to run, and finally what you would like to name the created java .class file.
 
 Project Log:
 
