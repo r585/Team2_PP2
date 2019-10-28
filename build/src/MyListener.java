@@ -139,25 +139,6 @@ public class MyListener extends KnightCodeBaseListener {
 
         @Override public void enterSetvar(KnightCodeParser.SetvarContext ctx) {
 		
-		 String type = ctx.STRING().getText();
-		 String num = ctx.expr(0).getText();
-		 int var = Integer.parseInt(num);
-                 if(!variableMap.containsKey(type)) {
-                        variableMap.put(type,variableMap.size());
-                 }
-                 else {
-                         if(variableMap.containsKey(type)) {
-                                 variableMap.put(type,-1);
-                         }
-                 }
-		if(!variableMap.containsKey(num)) {
-                        variableMap.put(num,var);
-                 }
-                 else {
-                         if(variableMap.containsKey(type)) {
-                                 variableMap.put(type,-1);
-                         }
-                 }
 
 
  }
@@ -168,23 +149,30 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-        @Override public void exitSetvar(KnightCodeParser.SetvarContext ctx) { }
- 
-	/**
-         * {@inheritDoc}
-         *
-         * <p>The default implementation does nothing.</p>
-         */
+        @Override public void exitSetvar(KnightCodeParser.SetvarContext ctx) {
 
-       // @Override public void enterExpr(KnightCodeParser.ExprContext ctx) { }
+		 String type = ctx.STRING().getText();
+                 String num = ctx.expr(1).getText();
+                 int var = Integer.parseInt(num);
+                 if(!variableMap.containsKey(type)) {
+                        variableMap.put(type,variableMap.size());
+                 }
+                 else {
+                         if(variableMap.containsKey(type)) {
+                                 variableMap.put(type,-1);
+                         }
+                 }
+                if(!variableMap.containsKey(num)) {
+                        variableMap.put(num,variableMap.size());
+                 }
+                 else {
+                         if(variableMap.containsKey(num)) {
+                                 variableMap.put(type,-1);
+                         }
+                 }
 
-        /**
-         * {@inheritDoc}
-         *
-         * <p>The default implementation does nothing.</p>
-         */
 
-       // @Override public void exitExpr(KnightCodeParser.ExprContext ctx) { }
+ }
 
 	/**
          * {@inheritDoc}
@@ -268,10 +256,29 @@ public class MyListener extends KnightCodeBaseListener {
 
         @Override public void enterDecision(KnightCodeParser.DecisionContext ctx) {
 
-		//String cond = ctx.comp().getText();
-		//if(cond == true)
-			//cond.stat();
-		 
+		String exp = ctx.expr(0).getText();
+		int value = Integer.parseInt(exp);
+		String dec = ctx.expr(1).getText();
+		int value2 = Integer.parseInt(dec);
+		String cond = ctx.comp().getText();
+		String operation = "cond";
+		
+		if(operation.equals(">")) {
+			if(value > value2 )
+				ctx.stat(0).getText();
+		}
+		else if(operation.equals("<")){
+			if(value < value2)
+				ctx.stat(0).getText();
+		}
+		else if(operation.equals("=")){ 
+			if(value == value2) 
+				ctx.stat(0).getText();
+		}else if(operation.equals("<>")){
+			if(value != value2) 
+				ctx.stat(0).getText();
+		}
+			 
 
  }
 
@@ -289,7 +296,32 @@ public class MyListener extends KnightCodeBaseListener {
          * <p>The default implementation does nothing.</p>
          */
 
-        @Override public void enterLoop(KnightCodeParser.LoopContext ctx) { }
+        @Override public void enterLoop(KnightCodeParser.LoopContext ctx) {
+
+		String first = ctx.expr(0).getText();
+                int num1 = Integer.parseInt(first);
+                String second  = ctx.expr(1).getText();
+                int num2 = Integer.parseInt(second);
+                String cond = ctx.comp().getText();
+                String operation = "cond";
+                
+                if(operation.equals(">")) {
+                        while(num1 > num2) 
+                                ctx.stat(0).getText();
+                }
+                else if(operation.equals("<")){
+                        while(num1 < num2)
+                                ctx.stat(0).getText();
+                }
+                else if(operation.equals("=")){ 
+                        while(num1 < num2) 
+                                ctx.stat(0).getText();
+                }else if(operation.equals("<>")){
+                        while(num1 < num2) 
+                                ctx.stat(0).getText();
+                }
+
+ }
 
         /**
          * {@inheritDoc}
