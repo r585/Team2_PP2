@@ -21,7 +21,14 @@ import java.util.Scanner;
  */
 public class MyListener extends KnightCodeBaseListener {
 
+	//This is a hashmap that will store the variables of the symbol table.
+	
 	HashMap<String, Integer> variableMap = new HashMap();
+	
+	/**
+	 *This method is called when the parser is going to parse the variable statement. 
+	 *
+	 */
  
         @Override public void enterVariable(KnightCodeParser.VariableContext ctx) {
 
@@ -36,6 +43,11 @@ public class MyListener extends KnightCodeBaseListener {
                  }
  	}
 
+	/**
+	 *This method is called when the parser has finished parsing the setvar statement 
+	 *
+	 */
+	
         @Override public void exitSetvar(KnightCodeParser.SetvarContext ctx) {
 
 		 String type = ctx.STRING().getText();
@@ -59,6 +71,11 @@ public class MyListener extends KnightCodeBaseListener {
                  }
  	}
 
+	/**
+	 *This method is called when the parser has finished parsing the print statement 
+	 *
+	 */
+	
         @Override public void exitPrint(KnightCodeParser.PrintContext ctx) { 
 
 		if(ctx.STRING() != null){
